@@ -1,10 +1,8 @@
-import {FormsModule} from "@angular/forms";
-import {BrowserModule} from "@angular/platform-browser";
-import {RouterModule} from "@angular/router";
-import {AppComponent} from "./app.component";
-import {NgModule} from "@angular/core";
-import {Routes} from "@angular/router";
-
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule, Routes } from "@angular/router"; // Ensure Routes is imported
+import { AppComponent } from "./app.component";
+import { NgModule } from "@angular/core";
 
 const OAuth = require('oauth').OAuth;
 
@@ -33,35 +31,10 @@ oauth.get(url, accessToken, accessTokenSecret, (error, data, response) => {
     console.log('Dane użytkownika:', user);
   }
 });
-const appRoutes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-    data:{page: 'Home page'}
-  },
-  {
-    path: 'news/:newsId',
-    component: NewsComponent,
-  },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  { path: '**',
-    component: NotFoundComponent }
-]
 
 let NotFoundComponent;
-
 let NewsComponent;
-
 let LoginComponent;
-
 let HomeComponent;
 
 @NgModule({
@@ -75,10 +48,7 @@ let HomeComponent;
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
-    ),
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: []
 })
