@@ -1,4 +1,4 @@
-body {
+body{
   margin: 0;
   font-family: 'Georgia', serif;
   background-image: url('https://th.bing.com/th/id/OIP.qFcgvfmunOooZOXwBmGDlgHaEK?cb=iwp2&rs=1&pid=ImgDetMain');
@@ -32,6 +32,15 @@ body {
   padding: 2rem;
 }
 
+footer{
+  flex: 1;
+  background: #e7e0d6;
+  color: #92887f90;
+  padding: 1px;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
 .post-box {
   background: #e0d8c4;
   padding: 1rem;
@@ -53,7 +62,7 @@ body {
   font-family: inherit;
   font-size: 1rem;
   background: #f1ede4;
-  color: #999;
+  color: #9999999f;
 }
 
 .tweet {
@@ -63,7 +72,7 @@ body {
 }
 
 .tweet-header {
-  background: #92887f;
+  background: #92887f47;
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -101,4 +110,7 @@ body {
   font-size: 1.5rem;
   background: rgba(255, 255, 255, 0.2);
   padding: 0.5rem 1rem;
+}
+a{
+    text-decoration: none;
 }
