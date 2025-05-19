@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-image: url('https://th.bing.com/th/id/OIP.qFcgvfmunOooZOXwBmGDlgHaEK?cb=iwp2&rs=1&pid=ImgDetMain');
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-style: italic;
+  color: #3c2e2e;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.feed {
+  flex: 1;
+  background: #e7e0d6;
+  padding: 2rem;
+}
+
+.post-box {
+  background: #e0d8c4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-box .user {
+  background: #92887f;
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.post-box textarea {
+  width: 100%;
+  height: 80px;
+  border: none;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #f1ede4;
+  color: #999;
+}
+
+.tweet {
+  background: #e0d8c4;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.tweet-header {
+  background: #92887f;
+  color: white;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.tweet-header img {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.tweet-content {
+  background: #f1ede4;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.menu {
+  width: 20%;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.menu a {
+  display: block;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+}

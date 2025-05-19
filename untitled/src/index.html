@@ -1,13 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="utf-8">
-  <title>Untitled</title>
+  <title>X - praktyki</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+  <div class="container">
+    <aside class="sidebar">
+      <h1 class="logo">X<span>Twitter</span></h1>
+    </aside>
+
+    <main class="feed">
+      <div class="post-box">
+        <div class="user">@TwojUzytkownik</div>
+        <textarea placeholder="Podziel się wiadomościami i z innymi!"></textarea>
+      </div>
+
+      <div class="tweet">
+        <div class="tweet-header">
+          <img src="avatar.png" alt="awatar">
+          <span>@none</span>
+        </div>
+        <div class="tweet-content">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit.
+        </div>
+      </div>
+
+      <div class="tweet">
+        <div class="tweet-header">
+          <img src="avatar.png" alt="awatar">
+          <span>@none2</span>
+        </div>
+        <div class="tweet-content">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat...
+        </div>
+      </div>
+    </main>
+
+    <aside class="menu">
+      <a href="#">PROFIL</a>
+      <a href="#">USTAWIENIA</a>
+      <a href="#">WYLOGUJ</a>
+    </aside>
+  </div>
+  </app-root>
 </body>
 </html>
