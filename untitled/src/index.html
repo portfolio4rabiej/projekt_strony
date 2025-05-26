@@ -10,81 +10,273 @@
 </head>
 <body>
   <app-root>
-  <div class="container">
-    <aside class="sidebar">
-     <a href="https://x.com/explore">
-      <h1 class="logo">X<span>Twitter</span></h1></a>
-    </aside>
-
-    <main class="feed">
-      <div class="post-box">
-        <div class="user">@TwojUzytkownik</div>
-        <textarea placeholder="Podziel się wiadomościami i z innymi!"></textarea>
-      </div>
-
-      <div class="tweet">
-        <div class="tweet-header">
-          <img src="avatar.png" alt="awatar">
-          <span>@none</span>
+    <div class="container">
+      <aside class="sidebar">
+        <a href="https://x.com/explore">
+          <h1 class="logo">Buy<span>Net</span></h1>
+        </a>
+        <nav>
+          <a href="#">PROFIL</a>
+          <a href="https://x.com/settings/account">USTAWIENIA</a>
+          <a href="logowanie.html">ZALOGUJ</a>
+          <a href="logowanie.html">ZAREJESTRUJ SIĘ</a>
+        </nav>
+        
+        <div class="video-container">
+          <video controls muted loop>
+            <source src="https://youtu.be/i4FXjlSGmF8?si=W6-E_AOLVRwoUF5J.webm" type="video/webm" />
+            <source src="videoplayback.mp4" type="video/mp4" />
+            Twoja przeglądarka nie obsługuje elementu wideo.
+          </video>
         </div>
-        <div class="tweet-content">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit.
-        </div>
-      </div>
+      </aside>
 
-      <div class="tweet">
-        <div class="tweet-header">
-          <img src="avatar.png" alt="awatar">
-          <span>@none2</span>
+      <main class="feed">
+        <div class="post-box" aria-label="Tworzenie wpisu">
+          <div class="user">@TwojUzytkownik</div>
+          <textarea id="post-text" placeholder="Podziel się swoim nowym produktem z innymi!" aria-label="Wiadomość wpisu"></textarea>
+          <div class="post-controls" role="toolbar" aria-label="Narzędzia do tworzenia wpisu">
+            <button class="post-control-button" title="Dodaj obraz" type="button" aria-expanded="false" aria-controls="image-panel" aria-haspopup="true" data-panel="image-panel" tabindex="0" >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            </button>
+            <button class="post-control-button" title="Dodaj film" type="button" aria-expanded="false" aria-controls="video-panel" aria-haspopup="true" data-panel="video-panel" tabindex="0">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 10.5V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+            </button>
+            <button class="post-control-button" title="Dodaj piosenkę" type="button" aria-expanded="false" aria-controls="audio-panel" aria-haspopup="true" data-panel="audio-panel" tabindex="0">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+            </button>
+            <button class="post-control-button" title="Zmień tekst" type="button" aria-expanded="false" aria-controls="text-panel" aria-haspopup="true" data-panel="text-panel" tabindex="0">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17v2h14v-2H3zm13-7-2-4-2 4h4zM8 10h8v2H8v-2z"/></svg>
+            </button>
+            <button class="post-control-button" title="Dodaj emoji" type="button" aria-expanded="false" aria-controls="emoji-panel" aria-haspopup="true" data-panel="emoji-panel" tabindex="0">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#d6336c" stroke-width="2"/><path d="M8 14s1.5 2 4 2 4-2 4-2" fill="none" stroke="#d6336c" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="#d6336c"/><circle cx="15" cy="10" r="1" fill="#d6336c"/></svg>
+            </button>
+            <button class="post-control-button" title="Cenzuruj tekst" type="button" aria-expanded="false" aria-controls="censor-panel" aria-haspopup="true" data-panel="censor-panel" tabindex="0">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="2" fill="#d6336c" rx="1"/></svg>
+            </button>
+          </div>
+          <div id="image-panel" class="control-panel" aria-hidden="true">
+            <label for="image-input">Wybierz obraz:</label>
+            <input type="file" accept="image/*" id="image-input" aria-label="Dodaj obrazek" />
+            <div id="image-preview-container"></div>
+          </div>
+          <div id="video-panel" class="control-panel" aria-hidden="true">
+            <label for="video-input">Wybierz film:</label>
+            <input type="file" accept="video/*" id="video-input" aria-label="Dodaj film" />
+            <div id="video-preview-container"></div>
+          </div>
+          <div id="audio-panel" class="control-panel" aria-hidden="true">
+            <label for="audio-input">Wybierz piosenkę:</label>
+            <input type="file" accept="audio/*" id="audio-input" aria-label="Dodaj piosenkę" />
+            <div id="audio-preview-container"></div>
+          </div>
+          <div id="text-panel" class="control-panel" aria-hidden="true">
+            <label for="edit-text">Edytuj tekst:</label>
+            <textarea id="edit-text" rows="3" placeholder="Edytuj swój tekst tutaj..." aria-label="Edytuj tekst wpisu"></textarea>
+            <button id="update-text-btn" type="button" style="background:#d6336c;color:#fff;border:none;padding:6px 12px;border-radius:8px;cursor:pointer;">Zaktualizuj tekst</button>
+          </div>
+          <div id="emoji-panel" class="control-panel" aria-hidden="true" aria-label="Panel emoji">
+            <span class="emoji" role="img" aria-label="serce">♡</span>
+            <span class="emoji" role="img" aria-label="kwiat">❀</span>
+            <span class="emoji" role="img" aria-label="uśmiech">🐻‍❄️ྀིྀི</span>
+            <span class="emoji" role="img" aria-label="gwiazda">★</span>
+            <span class="emoji" role="img" aria-label="kot">ᓚᘏᗢ</span>
+            <span class="emoji" role="img" aria-label="tęcza">⋒</span>
+          </div>
+          <div id="censor-panel" class="control-panel" aria-hidden="true">
+            <label>
+              <input type="checkbox" id="censor-toggle" />
+              Włącz cenzurę tekstu (maskowanie znaków)
+            </label>
+          </div>
         </div>
-        <div class="tweet-content">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat...
-        </div>
-      </div>
-    </main>
 
-    <aside class="menu">
-      <a href="#">PROFIL</a>
-      <a href="https://x.com/settings/account">USTAWIENIA</a>
-      <a href="logowanie.html">ZALOGUJ</a>
-    </aside>
-  </div>
-  <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-  <footer>
-    <p>&copy; 2025 WASKO S.A. Aleksandra Rabiej. All rights reserved.</p>
-  </footer>
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous" data-page="prev">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li><a href="http://localhost:4200/#" class="active">1</a></li>
+            <li><a href="#" data-page="2">2</a></li>
+            <li><a href="#" data-page="3">3</a></li>
+            <li><a href="#" data-page="4">4</a></li>
+            <li><a href="#" data-page="5">5</a></li>
+            <li>
+              <a href="#" aria-label="Next" data-page="next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </main>
+    </div>
+    
+    <footer>
+      <p>© 2025 WASKO S.A. Aleksandra Rabiej. All rights reserved.</p>
+    </footer>
   </app-root>
-</body>
-</html>
 
-<script nonce="MmFlMzhjMjctMzk5Ny00OGYzLTg0ZDItMmE1N2NiOTM1NmFm">(function () {
-  if (!window.__SCRIPTS_LOADED__['main']) {
-    document.getElementById('ScriptLoadFailure').style.display = 'block';
-    var criticalScripts = ["vendor","main"];
-    for (var i = 0; i < criticalScripts.length; i++) {
-      var criticalScript = criticalScripts[i];
-      if (!window.__SCRIPTS_LOADED__[criticalScript]) {
-        document.getElementsByName('failedScript')[0].value = criticalScript;
-        break;
+<!--   
+  <div id="login-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+    <div class="modal-content">
+      <h2 id="modal-title">Musisz się zalogować, by zobaczyć więcej</h2>
+      <div id="modal-desc" style="margin-top:12px; font-weight: 500; font-size: 14px; color: #a62857;">
+        Aby kontynuować, proszę zaloguj się.
+      </div>
+      <div style="margin-top: 20px;">
+        <button class="ok-btn" type="button" id="modal-ok-btn" aria-label="Zamknij komunikat">OK</button>
+        <button class="login-btn" type="button" id="modal-login-btn" aria-label="Przejdź do logowania">Zaloguj się</button>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <script>
+    document.querySelectorAll('.post-control-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const panelId = button.dataset.panel;
+        const panel = document.getElementById(panelId);
+        const isActive = panel.classList.contains('active');
+        document.querySelectorAll('.control-panel').forEach(p => {
+          p.classList.remove('active');
+          p.setAttribute('aria-hidden', 'true');
+        });
+        document.querySelectorAll('.post-control-button').forEach(btn => {
+          btn.setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          panel.classList.add('active');
+          panel.setAttribute('aria-hidden', 'false');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    const postText = document.getElementById('post-text');
+    document.getElementById('emoji-panel').addEventListener('click', e => {
+      if (e.target.classList.contains('emoji')) {
+        const emoji = e.target.textContent;
+        insertAtCursor(postText, emoji);
+        postText.focus();
+      }
+    });
+
+    function insertAtCursor(textarea, text) {
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const before = textarea.value.substring(0, start);
+      const after  = textarea.value.substring(end, textarea.value.length);
+      textarea.value = before + text + after;
+      textarea.selectionStart = textarea.selectionEnd = start + text.length;
+    }
+
+    const updateTextBtn = document.getElementById('update-text-btn');
+    const editTextArea = document.getElementById('edit-text');
+    updateTextBtn.addEventListener('click', () => {
+      postText.value = editTextArea.value;
+      closeAllPanels();
+      postText.focus();
+    });
+
+    document.querySelector('[data-panel="text-panel"]').addEventListener('click', () => {
+      editTextArea.value = postText.value;
+    });
+
+    const censorToggle = document.getElementById('censor-toggle');
+    censorToggle.addEventListener('change', () => {
+      if (censorToggle.checked) {
+        censorText();
+      } else {
+        postText.value = originalText;
+      }
+    });
+
+
+    let originalText = '';
+    postText.addEventListener('input', () => {
+      originalText = postText.value;
+      if (censorToggle.checked) {
+        censorText();
+      }
+    });
+
+    function censorText() {
+      if (!originalText) originalText = postText.value;
+      let censored = originalText.replace(/[aeiouyAEIOUYąęółśżźćńĄĘÓŁŚŻŹĆŃ]/g, '*');
+      postText.value = censored;
+    }
+
+    function previewFile(input, container, elementType) {
+      container.innerHTML = '';
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const url = URL.createObjectURL(file);
+        let mediaElem;
+        if (elementType === 'image') {
+          mediaElem = document.createElement('img');
+          mediaElem.src = url;
+          mediaElem.classList.add('media-preview');
+          mediaElem.alt = 'Podgląd obrazka';
+        } else if (elementType === 'video') {
+          mediaElem = document.createElement('video');
+          mediaElem.src = url;
+          mediaElem.controls = true;
+          mediaElem.classList.add('media-preview');
+        } else if (elementType === 'audio') {
+          mediaElem = document.createElement('audio');
+          mediaElem.src = url;
+          mediaElem.controls = true;
+        }
+        if (mediaElem) {
+          container.appendChild(mediaElem);
+        }
       }
     }
-  }
-})();</script>
+
+    const imageInput = document.getElementById('image-input');
+    const imagePreview = document.getElementById('image-preview-container');
+    imageInput.addEventListener('change', () => {
+      previewFile(imageInput, imagePreview, 'image');
+    });
+
+    const videoInput = document.getElementById('video-input');
+    const videoPreview = document.getElementById('video-preview-container');
+    videoInput.addEventListener('change', () => {
+      previewFile(videoInput, videoPreview, 'video');
+    });
+
+    const audioInput = document.getElementById('audio-input');
+    const audioPreview = document.getElementById('audio-preview-container');
+    audioInput.addEventListener('change', () => {
+      previewFile(audioInput, audioPreview, 'audio');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('login-modal');
+      const okBtn = document.getElementById('modal-ok-btn');
+      const loginBtn = document.getElementById('modal-login-btn');
+      const nextLink = document.querySelector('.pagination a[data-page="next"]');
+      if (nextLink) {
+        nextLink.addEventListener('click', (event) => {
+          event.preventDefault();
+          modal.classList.add('active');
+        });
+      }
+      okBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+      loginBtn.addEventListener('click', () => {
+        window.location.href = 'logowanie.html';
+      });
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
