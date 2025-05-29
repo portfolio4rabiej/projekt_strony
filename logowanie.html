@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <title>Logowanie - X Twitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+  <main class="login-container" role="main" aria-label="Formularz logowania">
+    <h1 class="logo">X<span>Twitter</span></h1>
+    <form action="#" method="post" autocomplete="off" novalidate>
+      <label for="email">Adres e-mail</label>
+      <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-help" placeholder="wpisz swój e-mail" />
+      <span id="email-help" style="display:none; color:#a62857; font-size:12px;">Wprowadź poprawny adres email</span>
+
+      <label for="password">Hasło</label>
+      <input type="password" id="password" name="password" required aria-required="true" placeholder="wpisz swoje hasło" />
+
+      <button type="submit" aria-label="Zaloguj się">Zaloguj się</button>
+    </form>
+    <a href="https://x.com/i/flow/password_reset?input_flow_data=%7B%22requested_variant%22%3A%22eyJwbGF0Zm9ybSI6IlJ3ZWIifQ%3D%3D%22%7D" class="forgot-password" tabindex="0">Zapomniałeś hasła?</a>
+    <button class="register-button" type="button" aria-label="Zarejestruj się">Zarejestruj się</button>
+  </main>
+</body>
+</html>
+
